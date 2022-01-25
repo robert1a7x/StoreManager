@@ -22,7 +22,26 @@ const create = async ({ name, quantity }) => {
   };
 };
 
+const getAll = async () => {
+  const [products] = await connection.execute('SELECT * FROM products');
+
+  return products;
+};
+
+const getById = async (id) => {
+  const query = 'SELECT * FROM products WHERE id = ?';
+
+  const product = await connection.execute(query, [id])
+  .then(([result]) => (result.length ? result[0] : null));
+
+  if (!product) return null;
+
+  return product;
+};
+
 module.exports = {
   create,
   nameAlreadyExists,
+  getAll,
+  getById,
 };
