@@ -17,6 +17,7 @@ app.post('/products', productController.create);
 app.get('/products', productController.getAll);
 app.get('/products/:id', productController.getById);
 app.put('/products/:id', productController.update);
+app.delete('/products/:id', productController.remove);
 
 app.use(errorMiddleware);
 

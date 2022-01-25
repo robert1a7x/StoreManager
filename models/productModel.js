@@ -51,10 +51,21 @@ const update = async (id, { name, quantity }) => {
   };
 };
 
+const remove = async (id) => {
+  const product = await getById(id);
+
+  const query = 'DELETE FROM products WHERE id = ?';
+
+  await connection.execute(query, [id]);
+
+  return product;
+};
+
 module.exports = {
   create,
   nameAlreadyExists,
   getAll,
   getById,
   update,
+  remove,
 };
