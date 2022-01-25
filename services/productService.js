@@ -39,8 +39,28 @@ const getById = async (id) => {
   return product;
 };
 
+const update = async (id, { name, quantity }) => {
+  const isValid = validateProductInfo(name, quantity);
+  
+  if (isValid.errCode) return isValid;
+
+  const productExist = await productModel.getById(id);
+
+  if (!productExist) {
+    return {
+      errCode: 404,
+      message: 'Product not found',
+    };
+  }
+
+  const updatedProduct = await productModel.update(id, { name, quantity });
+
+  return updatedProduct;
+};
+
 module.exports = {
   create,
   getAll,
   getById,
+  update,
 };
