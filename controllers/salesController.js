@@ -7,7 +7,7 @@ const create = async (req, res, next) => {
 
   if (sales.errCode) return next(sales);
 
-  res.status(201).json(sales);
+  return res.status(201).json(sales);
 };
 
 module.exports = {
