@@ -1,7 +1,7 @@
 const connection = require('./connection');
 
 const create = async (sales) => {
-  const createSaleDate = 'INSERT INTO sales (date) VALUES (DEFAULT)';
+  const createSaleDate = 'INSERT INTO sales (id) VALUES (DEFAULT)';
   const [{ insertId }] = await connection.execute(createSaleDate);
 
   const createQuery = 'INSERT INTO sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)';
