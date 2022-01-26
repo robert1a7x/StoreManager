@@ -37,8 +37,30 @@ const getById = async (id) => {
   return sale;
 };
 
+const update = async (id, sale) => {
+  const serializedSale = serialize(sale);
+
+  const isValid = validateSalesInfo(serializedSale);
+
+  if (isValid.errCode) return isValid;
+
+  const saleExist = await salesModel.getById(id);
+
+  if (!saleExist) {
+    return {
+      errCode: 404,
+      message: 'Sale not found',
+    };
+  }
+
+  const saleId = await salesModel.update(id, serializedSale);
+
+  return { saleId, itemUpdated: [...sale] };
+};
+
 module.exports = {
   create,
   getAll,
   getById,
+  update,
 };

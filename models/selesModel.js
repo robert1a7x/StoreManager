@@ -43,8 +43,20 @@ const getById = async (id) => {
   return sale;
 };
 
+const update = async (id, sale) => {
+  const query = 'UPDATE sales_products SET product_id = ?, quantity = ? WHERE sale_id = ?';
+
+  const promises = sale.map(async ({ productId, quantity }) => 
+  connection.execute(query, [productId, quantity, id]));
+
+  await Promise.all(promises);
+
+  return id;
+};
+
 module.exports = {
   create,
   getAll,
   getById,
+  update,
 };
