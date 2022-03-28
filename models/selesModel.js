@@ -54,9 +54,22 @@ const update = async (id, sale) => {
   return id;
 };
 
+const destroy = async (id) => {
+  const salesToDelete = await getAll();
+
+  const query = 'DELETE FROM sales WHERE id = ?';
+
+  const [deletedSale] = await connection.execute(query, [id]);
+
+  if (deletedSale.affectedRows === 0) return null;
+
+  return salesToDelete;
+};
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
+  destroy,
 };
