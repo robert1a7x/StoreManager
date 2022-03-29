@@ -44,7 +44,7 @@ const destroy = async (req, res, next) => {
 
   if (deletedSale.errCode) return next(deletedSale);
 
-  res.status(200).json(deletedSale);
+  res.status(200).json({ message: 'Sale removed' });
 };
 
 module.exports = {
