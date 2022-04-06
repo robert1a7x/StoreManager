@@ -10,14 +10,14 @@
 - [Rotas](#testes)
 	- [POST `/products`](#post-products)
 	- [GET `/products`](#get-products)
-	- [GET `/products/:id`](#get-products-id)
-	- [PUT  `/products/:id`](#put-products-id)
-	- [DELETE `/products/:id`](#delete-products)
+	- [GET `/products/:id`](#get-productsid)
+	- [PUT  `/products/:id`](#put-productsid)
+	- [DELETE `/products/:id`](#delete-productsid)
 	- [POST `/sales`](#post-sales)
 	- [GET `/sales`](#get-sales)
-	- [GET `/sales/:id`](#get-sales-id)
-	- [PUT  `/sales/:id`](#put-sales)
-	- [DELETE `/sales/:id`](#delete-sales)
+	- [GET `/sales/:id`](#get-salesid)
+	- [PUT  `/sales/:id`](#put-salesid)
+	- [DELETE `/sales/:id`](#delete-salesid)
 
 # Contexto
 
