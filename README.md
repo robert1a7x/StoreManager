@@ -85,7 +85,7 @@ CREATE TABLE sales_products (
 SET SQL_SAFE_UPDATES =  0;
 ```
 
-O banco terá três tabelas: `products`, `sales` e `sales_products`.
+O banco possui três tabelas: `products`, `sales` e `sales_products`.
 
 A tabela `products` tem o seguinte formato:
 
