@@ -1,5 +1,5 @@
 const salesModel = require('../models/selesModel');
-const { validateSalesInfo } = require('../helpers/validateProductCreation');
+const { validateSalesInfo } = require('../helpers/validateProductAndSales');
 
 const serialize = (sales) => sales.map((sale) => ({
   productId: sale.product_id,
