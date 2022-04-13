@@ -28,7 +28,7 @@ A API trata-se de um sistema de gerenciamento de vendas, onde é possível criar
 
 ## Tecnologias usadas
 
-> Desenvolvido usando: Javascript, Express, Node.js, Mysql, Mocha, Chai
+> Desenvolvido usando: Javascript, Express, Node.js, Mysql, Mocha, Chai, Sinon
 
 
 ## Configuração inicial
